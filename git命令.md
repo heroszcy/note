@@ -38,18 +38,18 @@ git format-patch生成的补丁文件默认从1开始顺序编号，并使用对
     `git am --signoff < newpatch.patch`  
 (使用-s或--signoff选项，可以commit信息中加入Signed-off-by信息)  
 如果应用patch出现问题：
-比如，一个典型的git am失败，可能是这样的: 
+比如，一个典型的git am失败，可能是这样的:          
                                        
-    `$ git am PATCH ` 
-    `Applying: PACTH DESCRIPTION `  
-    `error: patch failed: file.c:137`  
-    `error: file.c: patch does not apply`  
-    `error: patch failed: Makefile:24 ` 
-    `error: libavfilter/Makefile: patch does not apply`  
-    `Patch failed at 0001 PATCH DESCRIPTION`  
-    `When you have resolved this problem run "git am --resolved".`  
-    `If you would prefer to skip this patch, instead run "git am --skip".`  
-    `To restore the original branch and stop patching run "git am --abort".` 
+    $ git am PATCH
+    Applying: PACTH DESCRIPTION
+    error: patch failed: file.c:137
+    error: file.c: patch does not apply
+    error: patch failed: Makefile:24
+    error: libavfilter/Makefile: patch does not apply
+    Patch failed at 0001 PATCH DESCRIPTION
+    When you have resolved this problem run "git am --resolved".
+    If you would prefer to skip this patch, instead run "git am --skip".
+    To restore the original branch and stop patching run "git am --abort".
 
 正如你所见，如果冲突发生，git只是输出上述信息，然后就停下来。一个小冲突会导致整个patch都不会被集成。
 
